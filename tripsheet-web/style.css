@@ -1,0 +1,234 @@
+/*
+Theme Name: Sadiquna Intro
+Theme URI: https://sadiquna.com
+Author: Sadiquna
+Description: One-page introduction to the Sadiquna trip logbook for drivers.
+Version: 1.0.0
+Requires at least: 6.0
+Text Domain: sadiquna-intro
+*/
+
+:root {
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --paper: #f6f1e8;
+  --card: #fffdf8;
+  --line: #e4d9c8;
+  --accent: #0f6e56;
+  --accent-dark: #0b5342;
+  --header: rgba(246, 241, 232, 0.92);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent-dark);
+}
+
+.wrap {
+  width: min(68rem, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--header);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4rem;
+  gap: 1rem;
+}
+
+.brand {
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 3.5rem 0 2.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.lede {
+  max-width: 38rem;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #f7fffc;
+}
+
+.button-primary:hover {
+  background: var(--accent-dark);
+  color: #f7fffc;
+}
+
+.button-secondary {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+
+.section {
+  padding: 2.25rem 0;
+}
+
+.section-intro {
+  max-width: 36rem;
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  margin: 0;
+  padding: 1.1rem 1.15rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  margin: 0 0 0.9rem;
+}
+
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #f7fffc;
+  font-weight: 700;
+}
+
+.help {
+  padding: 1.25rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.site-footer {
+  padding: 2rem 0 2.5rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.site-footer p {
+  margin: 0.2rem 0;
+}
+
+@media (min-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
